@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dothraki Translator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #output {
+            border: 1px solid black;
+            height: 10vh;
+            width: 70%;
+            padding: 3rem;
+            margin: 1rem;
+            background-color:blanchedalmond;
+            position: relative;
+        }
+
+
+    </style>
+
+</head>
+<body background="">
+        <nav> Speak Like A Dothraki!</nav>
+    <main>
+        <!-- textarea -->
+        <textarea id="text-space" placeholder="Enter the text to convert to Dothraki language"></textarea>
+
+        <!-- creating button -->
+        <button id="bt-translate"> Translate</button>
+
+        <!-- output to show -->
+        <div id="output"></div>
+    </main>
+
+    
+    <footer>
+         <div style="font-size: x-large; color: #ff022c;"> <strong> About</strong> </div>
+        <p> Fan of Game of Thrones, right? Here is the translator that converts your text into Dothraki language. Cool, yeah!   <br>  
+            <mark style="color: crimson;"> @rajatmehra2020</mark>
+    </footer>
+    
+    <script src="app.js" type="text/javascript">
+    
+    const button = document.querySelector('#bt-translate');
+    
+
+    button.addEventListener('click', function(e){
+            let x= e.clientX - e.target.offsetLeft;
+            let y=e.clientY - e.target.offsetTop;
+
+            let ripples = document.createElement('span');
+            ripples.style.left = x + 'px';
+            ripples.style.top = y + 'px';
+            this.appendChild(ripples);
+
+            setTimeout(() => {
+                ripples.remove()
+            },1000);
+        });
+    
+    </script>
+</body>
+</html>
